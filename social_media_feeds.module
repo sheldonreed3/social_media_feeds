@@ -1,0 +1,28 @@
+<?php
+
+module_load_include('inc', 'social_media_feeds', 'social_media_feeds.admin');
+
+/**
+ * Configuration form for the social media feeds.
+ *
+ * Implements hook_menu().
+ * @return array
+ */
+function social_media_feeds_menu() {
+  $items = array();
+  $items['admin/config/system/social_media_feeds'] = array(
+    'title' => 'Social Media Feeds',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_social_media_feeds_config_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function social_media_feeds_views_api() {
+  return array('api' => '3.0');
+}

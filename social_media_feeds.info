@@ -1,0 +1,8 @@
+name = Social Media Feeds
+description = Import and display social media feeds.
+core = 7.x
+package = Social Media
+
+files[] = social_media_feeds.classes.inc
+files[] = views/handlers/social_media_feeds_views_handlers.inc
+files[] = views/plugins/social_media_feeds_views_plugin_style.inc
